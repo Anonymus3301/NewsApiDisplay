@@ -1,6 +1,8 @@
 import './App.scss';
 import LeftBar from './Components/leftbar'
 import MainContent from './Components/MainContent';
+import Topbar from './Components/Topbar';
+import BottomBar from './Components/BottomBar';
 import React from 'react';
 import {BrowserRouter as Router,Route,Switch} from 'react-router-dom'
 function App() {
@@ -13,7 +15,9 @@ function App() {
       <MainContent />
     </div>
     <div className="mobileView">
-      KPKP
+      <Topbar/>
+      <MainContent/>
+      <BottomBar/>
     </div>
     </div>
     </Router>
