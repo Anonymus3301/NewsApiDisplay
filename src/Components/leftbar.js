@@ -16,9 +16,7 @@ const style2={
     "box-shadow":"inset 0 0 10px grey"
 }
 const [k,setK]=useState(true)
-useEffect(()=>{
 
-},k)
     return (
         <div className="left-bar">
             <div className="intro">
