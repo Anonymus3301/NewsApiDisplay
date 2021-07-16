@@ -7,7 +7,7 @@ export default class Getdata2 extends React.Component{
     };
 
     componentDidMount(){
-        Axios.get(`https://newsapi.org/v2/everything?q=Apple&from=2021-07-12&sortBy=popularity&apiKey=b5a02579e8674700a09deefa6f24af0c`).then(res=>{
+        Axios.get(`https://newsapi.org/v2/top-headlines?country=in&category=business&apiKey=b5a02579e8674700a09deefa6f24af0c`).then(res=>{
             
             this.setState({results:res.data.articles});
             console.log(this.state.results)
