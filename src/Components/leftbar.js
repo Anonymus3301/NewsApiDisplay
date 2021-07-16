@@ -16,7 +16,7 @@ const style2={
     "box-shadow":"inset 0 0 10px grey"
 }
 const [k,setK]=useState(true)
-
+console.log(window.location.pathname)
     return (
         <div className="left-bar">
             <div className="intro">
@@ -30,12 +30,12 @@ const [k,setK]=useState(true)
             </div>
             <div className="toggle">
             <Link to="/">
-                <div style={k===true?style1:style2} onClick={()=>{
+                <div style={window.location.pathname==='/'?style1:style2} onClick={()=>{
                     setK(!k);
                 }}className="view1"><img src={toggle1} alt=""></img></div>
             </Link>
             <Link to="/view2">
-                <div style={k===false?style1:style2} onClick={()=>{
+                <div style={window.location.pathname==='/view2'?style1:style2} onClick={()=>{
                     setK(!k);
                 }}className="view2"><img src={toggle2} alt=""></img></div>
             </Link>

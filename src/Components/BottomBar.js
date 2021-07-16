@@ -15,7 +15,10 @@ const style2={
 }
 const [k,setK]=useState(true)
 useEffect(()=>{
-
+    if(window.location.pathname==='/'){
+        window.location.pathname='/view2'
+    }
+    
 },k)
     return (
         <div className="bottom">

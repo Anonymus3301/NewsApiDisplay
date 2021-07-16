@@ -7,7 +7,7 @@ export default class Getdata extends React.Component{
     };
 
     componentDidMount(){
-        Axios.get(`https://newsapi.org/v2/everything?q=Apple&from=2021-07-12&sortBy=popularity&apiKey=b5a02579e8674700a09deefa6f24af0c`).then(res=>{
+        Axios.get(`https://newsapi.org/v2/top-headlines?country=in&category=business&apiKey=b5a02579e8674700a09deefa6f24af0c`).then(res=>{
             
             this.setState({results:res.data.articles});
             console.log(this.state.results)
@@ -23,7 +23,7 @@ export default class Getdata extends React.Component{
                         <a href={value.url} target="_blank">
                         <div key={key} className="newscard">
                             <div className="title">{value.title}</div>
-                            <div className="author"><span>Author:{value.author}</span><span className="date">{value.publishedAt}</span></div>
+                            <div className="author"><span>Source: npm {value.source.name}</span><span className="date">{value.publishedAt}</span></div>
                             <br></br>
                             <div className="imagep"><img src={value.urlToImage} alt=""></img></div>
                             <br></br>
