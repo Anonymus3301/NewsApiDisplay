@@ -1,6 +1,5 @@
 import React from "react";
 import Axios from "axios";
-import Cross from "@material-ui/icons/Close";
 export default class Getdata2 extends React.Component {
   state = {
     results: [],
