@@ -17,14 +17,17 @@ export default class Getdata2 extends React.Component {
     return (
       <div className="main-display-hori">
         {this.state.results.map((value, key) => (
-          <a key={key} href={value.url}>
+          <a
+            className="link"
+            key={key}
+            href={value.url}
+            target="_blank"
+            rel="noreferrer"
+          >
             <div className="newscard-hori">
               <div className="imagep">
                 <img src={value.urlToImage} alt=""></img>
-                <span>{value.title}</span>
-              </div>
-              <div className="close">
-                <Cross />
+                <span className="title-hori">{value.title}</span>
               </div>
             </div>
           </a>
