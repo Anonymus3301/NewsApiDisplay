@@ -11,15 +11,14 @@ export default class Getdata2 extends React.Component {
       `https://newsapi.org/v2/top-headlines?country=in&category=business&apiKey=b5a02579e8674700a09deefa6f24af0c`
     ).then((res) => {
       this.setState({ results: res.data.articles });
-      console.log(this.state.results);
     });
   }
   render() {
     return (
       <div className="main-display-hori">
         {this.state.results.map((value, key) => (
-          <a href={value.url}>
-            <div key={key} className="newscard-hori">
+          <a key={key} href={value.url}>
+            <div className="newscard-hori">
               <div className="imagep">
                 <img src={value.urlToImage} alt=""></img>
                 <span>{value.title}</span>

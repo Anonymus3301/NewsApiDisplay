@@ -1,21 +1,23 @@
-import React, { useState } from "react";
+import React from "react";
 import "../App.scss";
 import img from "./cat.jpg";
 import toggle1 from "./toggle1.svg";
 import { Link } from "react-router-dom";
 import toggle2 from "./toggle2.svg";
-import { useEffect } from "react";
-import { color } from "@material-ui/system";
+import { useSelector, useDispatch } from "react-redux";
+import { change1, change2 } from "./actions/action";
+
 function Leftbar() {
+  const dispatch = useDispatch();
+  const myState = useSelector((state) => state.changeView);
+
   const style1 = {
-    "background-color": "#99ef9c",
-    "box-shadow": "inset 0 0 10px grey",
+    backgroundColor: "#99ef9c",
+    boxShadow: "inset 0 0 10px grey",
   };
   const style2 = {
-    "box-shadow": "inset 0 0 10px grey",
+    boxShadow: "inset 0 0 10px grey",
   };
-  const [k, setK] = useState(true);
-  console.log(window.location.pathname);
   return (
     <div className="left-bar">
       <div className="intro">
@@ -31,9 +33,9 @@ function Leftbar() {
       <div className="toggle">
         <Link to="/">
           <div
-            style={window.location.pathname === "/" ? style1 : style2}
+            style={myState === "/" ? style1 : style2}
             onClick={() => {
-              setK(!k);
+              dispatch(change1());
             }}
             className="view1"
           >
@@ -42,9 +44,9 @@ function Leftbar() {
         </Link>
         <Link to="/view2">
           <div
-            style={window.location.pathname === "/view2" ? style1 : style2}
+            style={myState === "/view2" ? style1 : style2}
             onClick={() => {
-              setK(!k);
+              dispatch(change2());
             }}
             className="view2"
           >

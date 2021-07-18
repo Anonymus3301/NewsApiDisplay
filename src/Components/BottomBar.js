@@ -2,30 +2,29 @@ import React from "react";
 import toggle1 from "./toggle1.svg";
 import toggle2 from "./toggle2.svg";
 import { Link } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { change1, change2 } from "./actions/action";
 
 function BottomBar() {
+  const dispatch = useDispatch();
+  const myState = useSelector((state) => state.changeView);
+
   const style1 = {
-    "background-color": "#99ef9c",
-    "box-shadow": "inset 0 0 10px grey",
+    backgroundColor: "#99ef9c",
+    boxShadow: "inset 0 0 10px grey",
   };
 
   const style2 = {
-    "box-shadow": "inset 0 0 10px grey",
+    boxShadow: "inset 0 0 10px grey",
   };
-  const [k, setK] = useState(true);
-  useEffect(() => {
-    if (window.location.pathname === "/") {
-      window.location.pathname = "/view2";
-    }
-  }, k);
+
   return (
     <div className="bottom">
       <Link to="/">
         <span
-          style={k === true ? style1 : style2}
+          style={myState === "/" ? style1 : style2}
           onClick={() => {
-            setK(!k);
+            dispatch(change1());
           }}
           className="toggle1"
         >
@@ -34,9 +33,9 @@ function BottomBar() {
       </Link>
       <Link to="/view2">
         <span
-          style={k === false ? style1 : style2}
+          style={myState === "/view2" ? style1 : style2}
           onClick={() => {
-            setK(!k);
+            dispatch(change2());
           }}
           className="toggle2"
         >

@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import React from "react";
 import "../App.scss";
 import Getdata from "./Getdata";
 import Getdata2 from "./GetData2";
