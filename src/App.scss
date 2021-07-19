@@ -74,7 +74,7 @@
     background-color: #f1f1f1;
     display: flex;
     flex-wrap: wrap;
-    height: 100vh;
+    height: 96vh;
     justify-content: space-evenly;
     overflow-y: auto;
   }
@@ -92,6 +92,9 @@
     flex: 0;
     overflow-y: hidden;
   }
+  .outer-div {
+    height: 100vh;
+  }
   .newscard {
     width: 300px;
     box-shadow: 0 0px 0px 0 rgba(0, 0, 0, 0.5),
@@ -104,6 +107,11 @@
     overflow-y: hidden;
     display: flex;
     flex-direction: column;
+    .imagep {
+      img {
+        min-width: 180px;
+      }
+    }
   }
   .imagep {
     display: flex;
@@ -168,7 +176,7 @@
   .main-display-hori {
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    height: 96vh;
     width: calc(100vw - 300px);
     background-color: #f1f1f1;
     overflow-y: auto;
