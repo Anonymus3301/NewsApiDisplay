@@ -21,7 +21,7 @@ export default class Getdata extends React.Component {
             <div className="newscard">
               <div className="title">{value.title}</div>
               <div className="author">
-                <span>Source: npm {value.source.name}</span>
+                <span>Source: {value.source.name}</span>
                 <span className="date">{value.publishedAt}</span>
               </div>
               <br></br>
