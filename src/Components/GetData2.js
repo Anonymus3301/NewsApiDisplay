@@ -9,9 +9,9 @@ export default class Getdata2 extends React.Component {
 
   componentDidMount() {
     Axios.get(
-      `https://newsapi.org/v2/top-headlines?country=in&category=business&apiKey=b5a02579e8674700a09deefa6f24af0c`
+      `https://bing-news-search1.p.rapidapi.com/news/search?q=${Func}&rapidapi-key=b388adc471msh65e8cd88ea66e29p1557f7jsnfa0be9110ed2`
     ).then((res) => {
-      this.setState({ results: res.data.articles });
+      this.setState({ results: res.data.value });
     });
   }
   render() {
@@ -46,8 +46,11 @@ export default class Getdata2 extends React.Component {
             >
               <div className="newscard-hori">
                 <div className="imagep">
-                  <img src={value.urlToImage} alt=""></img>
-                  <span className="title-hori">{value.title}</span>
+                  <img
+                    src={value.image ? value.image.thumbnail.contentUrl : ""}
+                    alt="Noimagetodisplay"
+                  ></img>
+                  <span className="title-hori">{value.name}</span>
                 </div>
               </div>
             </a>
