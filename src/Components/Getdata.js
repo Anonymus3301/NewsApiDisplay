@@ -12,6 +12,11 @@ export default class Getdata extends React.Component {
     ).then((res) => {
       this.setState({ results: res.data.articles });
     });
+    Axios.get(
+      `https://gnews.io/api/v4/search?q=elon&token=d78fe8421b6b496a647626514325d3a6`
+    ).then((res) => {
+      console.log(res, "PPAP");
+    });
   }
   render() {
     return (
